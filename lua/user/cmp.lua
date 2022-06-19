@@ -6,7 +6,7 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set('n', '<leader>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
@@ -48,11 +48,11 @@ local lsp_flags = {
 }
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'bashls', 'sumneko_lua'}
+local servers = { 'clangd', 'rust_analyzer', 'bashls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
+        on_attach = on_attach,
+        capabilities = capabilities,
     }
 end
 
@@ -64,60 +64,60 @@ lspconfig['gopls'].setup {
     }
 }
 
-lspconfig['pyright'].setup{
+lspconfig['pyright'].setup {
     flags = lsp_flags,
     capabilities = capabilities,
-    }
+}
 
 
 cmp.setup({
     snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        luasnip.lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
-  },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ['<Tab>'] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        else
-          fallback()
-        end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-          else
-        fallback()
-        end
-    end, { 'i', 's' }),
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-    { name = 'buffer' },
-    {name = 'path'},
-  })
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            luasnip.lsp_expand(args.body) -- For `luasnip` users.
+            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        end,
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+    }),
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        -- { name = 'vsnip' }, -- For vsnip users.
+        { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'snippy' }, -- For snippy users.
+        { name = 'buffer' },
+        { name = 'path' },
+    })
 })
 
 ---- Set configuration for specific filetype.
@@ -146,4 +146,3 @@ cmp.setup({
 --    { name = 'cmdline' }
 --  })
 --})
-
