@@ -4,9 +4,9 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-)  return require'nvim-tree'.toggle	lua/user/keymaps.lua	/^vim.keymap.set('n', '<F4>', function()  return require'nvim-tree'.toggle(false, true) end , opts )$/;"	f
-['<S-Tab>'] 	lua/user/cmp.lua	/^    ['<S-Tab>'] = cmp.mapping(function(fallback)$/;"	f
-['<Tab>'] 	lua/user/cmp.lua	/^    ['<Tab>'] = cmp.mapping(function(fallback)$/;"	f
+) return require 'nvim-tree'.toggle	lua/user/keymaps.lua	/^vim.keymap.set('n', '<F4>', function() return require 'nvim-tree'.toggle(false, true) end, opts)$/;"	f
+['<S-Tab>'] 	lua/user/cmp.lua	/^        ['<S-Tab>'] = cmp.mapping(function(fallback)$/;"	f
+['<Tab>'] 	lua/user/cmp.lua	/^        ['<Tab>'] = cmp.mapping(function(fallback)$/;"	f
 ['[M'] 	lua/user/treesitter.lua	/^        ['[M'] = '@function.outer',$/;"	f
 ['[m'] 	lua/user/treesitter.lua	/^        ['[m'] = '@function.outer',$/;"	f
 [']M'] 	lua/user/treesitter.lua	/^        [']M'] = '@function.outer',$/;"	f
@@ -14,7 +14,7 @@
 ['af'] 	lua/user/treesitter.lua	/^        ['af'] = '@function.outer',$/;"	f
 ['if'] 	lua/user/treesitter.lua	/^        ['if'] = '@function.inner',$/;"	f
 dap.adapters.go 	lua/user/dap.lua	/^  dap.adapters.go = function(callback, config)$/;"	f
-expand 	lua/user/cmp.lua	/^    expand = function(args)$/;"	f
+expand 	lua/user/cmp.lua	/^        expand = function(args)$/;"	f
 handle, pid_or_err 	lua/user/dap.lua	/^    handle, pid_or_err = vim.loop.spawn("dlv", opts, function(code)$/;"	f
 if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~	plugin/packer_compiled.lua	/^if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then$/;"	f
 local no_errors, error_msg 	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
