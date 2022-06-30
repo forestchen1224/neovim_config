@@ -7,7 +7,10 @@ local luasnip = require 'luasnip'
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
+<<<<<<< HEAD
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+=======
+>>>>>>> 5260784e4c6fa449779682f2e51b32776bfc1c8c
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
@@ -48,7 +51,10 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 --}
 
 -- Enable the following language servers
+<<<<<<< HEAD
 local servers = { 'clangd', 'rust_analyzer', 'bashls', 'sumneko_lua', 'html', 'pyright' }
+=======
+>>>>>>> 5260784e4c6fa449779682f2e51b32776bfc1c8c
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,
@@ -64,6 +70,10 @@ lspconfig['gopls'].setup {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5260784e4c6fa449779682f2e51b32776bfc1c8c
 
 cmp.setup({
     snippet = {
@@ -112,7 +122,10 @@ cmp.setup({
         -- { name = 'snippy' }, -- For snippy users.
         { name = 'buffer' },
         { name = 'path' },
+<<<<<<< HEAD
         { name = 'nvim_lsp_signature_help' }
+=======
+>>>>>>> 5260784e4c6fa449779682f2e51b32776bfc1c8c
     })
 })
 

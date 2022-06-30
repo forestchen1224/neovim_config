@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
     --use 'hrsh7th/vim-vsnip'
     --use 'hrsh7th/vim-vsnip-integ'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
@@ -42,6 +43,9 @@ return require('packer').startup(function(use)
     use { 'morhetz/gruvbox' }
     use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
     use { 'simrat39/symbols-outline.nvim' }
+<<<<<<< HEAD
+=======
+>>>>>>> 5260784e4c6fa449779682f2e51b32776bfc1c8c
     --use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
     --use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
     ---- UI to select things (files, grep results, open buffers...)
