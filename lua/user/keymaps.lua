@@ -1,12 +1,12 @@
 --Remap space as leader key
 --vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.g.mapleader = ';'
+vim.g.mapleader = '\\'
 vim.g.maplocalleader = ''
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 ----Remap for dealing with word wrap
 --vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 --vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true )
-vim.keymap.set('n', '<F4>', function()  return require'nvim-tree'.toggle(false, true) end , opts )
+vim.keymap.set('n', '<F4>', function() return require 'nvim-tree'.toggle(false, true) end, opts)
 
 -- debug
 --vim.keymap.set("n", "<leader>db", require'dap'.toggle_breakpoint, opts)
@@ -30,7 +30,7 @@ vim.keymap.set('n', '<leader>ft', require('telescope.builtin').tags)
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').grep_string)
 vim.keymap.set('n', '<leader>fp', require('telescope.builtin').live_grep)
 vim.keymap.set('n', '<leader>fo', function()
-  require('telescope.builtin').tags { only_current_buffer = true }
+    require('telescope.builtin').tags { only_current_buffer = true }
 end)
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles)
 
