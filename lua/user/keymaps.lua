@@ -36,3 +36,6 @@ vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles)
 
 -- symbols-outline
 vim.keymap.set('n', '<leader>o', require('symbols-outline').toggle_outline, opts)
+vim.keymap.set('n', '<C-p>', '<cmd>cprevious<cr>')
+vim.keymap.set('n', '<C-n>', '<cmd>cnext<cr>')
+

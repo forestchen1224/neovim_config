@@ -26,13 +26,12 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/cmp-nvim-lsp-signature-help'
     --use 'hrsh7th/vim-vsnip'
     --use 'hrsh7th/vim-vsnip-integ'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
-    use 'jiangmiao/auto-pairs'
+    --use 'jiangmiao/auto-pairs'
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use 'tpope/vim-fugitive' -- Git commands in nvim
     use 'ludovicchabant/vim-gutentags' -- Automatic tags management
@@ -43,6 +42,7 @@ return require('packer').startup(function(use)
     use { 'morhetz/gruvbox' }
     use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
     use { 'simrat39/symbols-outline.nvim' }
+    use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end}
     --use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
     --use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
     ---- UI to select things (files, grep results, open buffers...)
