@@ -39,3 +39,6 @@ vim.keymap.set('n', '<leader>o', require('symbols-outline').toggle_outline, opts
 vim.keymap.set('n', '<C-p>', '<cmd>cprevious<cr>')
 vim.keymap.set('n', '<C-n>', '<cmd>cnext<cr>')
 
+-- terminal 
+vim.keymap.set('t', '<esc>', '<C-\\><C-N>' )
+
